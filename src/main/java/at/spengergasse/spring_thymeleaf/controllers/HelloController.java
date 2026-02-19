@@ -9,7 +9,6 @@ import java.time.format.DateTimeFormatter;
 
 @Controller
 public class HelloController {
-    //add date to model
 
     @GetMapping("")
     public  String index(Model model) {
@@ -20,16 +19,18 @@ public class HelloController {
         //hello
     }
 
-    @GetMapping
-    public  String index(Model model, String name) {
-        model.addAttribute("name", name);
-        return "index";
-    }
 
-   @GetMapping
-    public int add(Model model, int age) {
-       model.addAttribute("age", age);
-         return age;
-    }
+
+//    @GetMapping
+//    public  String index(Model model, String name) {
+//        model.addAttribute("name", name);
+//        return "index";
+//    }
+//
+//   @GetMapping
+//    public int add(Model model, int age) {
+//       model.addAttribute("age", age);
+//         return age;
+//    }
 
 }

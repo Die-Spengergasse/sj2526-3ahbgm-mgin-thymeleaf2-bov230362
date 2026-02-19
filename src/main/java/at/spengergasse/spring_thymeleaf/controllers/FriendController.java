@@ -35,6 +35,6 @@ public class FriendController {
     @PostMapping("/add")
     public String addFriend(@ModelAttribute("friend") Friend friend) {
         friendRepository.save(friend);
-        return  "redirect:/friend/list";
+        return  "redirect:/friendlist";
     }
 }

@@ -28,7 +28,7 @@ public class Friend {
         return age;
     }
 
-    public void setAge(LocalDate birth) {
+    public void setAge(int age) {
         this.age = age;
     }
 }

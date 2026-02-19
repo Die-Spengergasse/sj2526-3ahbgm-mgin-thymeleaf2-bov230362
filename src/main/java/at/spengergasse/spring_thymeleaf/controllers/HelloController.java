@@ -16,7 +16,6 @@ public class HelloController {
         model.addAttribute("today", LocalDate.now().format(dtf));
         return "index";
 
-        //hello
     }
 
 
@@ -26,11 +25,7 @@ public class HelloController {
 //        model.addAttribute("name", name);
 //        return "index";
 //    }
-//
-//   @GetMapping
-//    public int add(Model model, int age) {
-//       model.addAttribute("age", age);
-//         return age;
-//    }
+
+
 
 }

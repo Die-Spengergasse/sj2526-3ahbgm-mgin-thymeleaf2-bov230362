@@ -16,5 +16,7 @@ public class HelloController {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy");
         model.addAttribute("today", LocalDate.now().format(dtf));
         return "index";
+
+        //hello
     }
 }

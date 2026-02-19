@@ -9,6 +9,7 @@ import java.time.format.DateTimeFormatter;
 
 @Controller
 public class HelloController {
+    //add date to model
 
     @GetMapping("")
     public  String index(Model model) {

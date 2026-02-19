@@ -14,7 +14,7 @@ public class Friend {
     private int id;
 
     private String name;
-    private LocalDate birth;
+    private int age;
 
     public String getName() {
         return name;
@@ -24,11 +24,11 @@ public class Friend {
         this.name = name;
     }
 
-    public LocalDate getBirth() {
-        return birth;
+    public int getAge() {
+        return age;
     }
 
-    public void setBirth(LocalDate birth) {
-        this.birth = birth;
+    public void setAge(LocalDate birth) {
+        this.age = age;
     }
 }

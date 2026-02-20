@@ -8,9 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.time.format.DateTimeFormatter;
-
 @Controller
 @RequestMapping("/friend")
 public class FriendController {
@@ -21,7 +18,7 @@ public class FriendController {
     }
 
     @GetMapping("/list")
-    public String patients(Model model) {
+    public String friends(Model model) {
         model.addAttribute("friends", friendRepository.findAll());
         return "friendlist";
     }
@@ -32,9 +29,13 @@ public class FriendController {
         return "add_friend";
     }
 
+
+
     @PostMapping("/add")
     public String addFriend(@ModelAttribute("friend") Friend friend) {
         friendRepository.save(friend);
-        return  "redirect:/friendlist";
+        return "redirect:/friend/list";
     }
+
+
 }

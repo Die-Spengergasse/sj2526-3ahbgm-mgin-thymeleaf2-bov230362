@@ -15,6 +15,35 @@ public class Friend {
 
     private String name;
     private int age;
+    private String hairColour;
+    private String eyeColour;
+    private double height;
+
+
+
+    public String getHairColour() {
+        return hairColour;
+    }
+
+    public void setHairColour(String hairColour) {
+        this.hairColour = hairColour;
+    }
+
+    public String getEyeColour() {
+        return eyeColour;
+    }
+
+    public void setEyeColour(String eyeColour) {
+        this.eyeColour = eyeColour;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
 
     public String getName() {
         return name;

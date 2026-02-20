@@ -1,17 +1,61 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/html">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>add new patient</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Add Friend</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
+
 <body>
-<div class="container">
+<div class="container" style="max-width: 500px; margin-top: 40px;">
+
+    <h2>Add New Friend</h2>
+    <hr>
+
     <form th:action="@{/friend/add}" th:object="${friend}" method="post">
-        <input type="text" th:field="*{name}" class="form-control" placeholder="friend name">
-        birth date <input type="number" th:field="*{age}" class="form-control">
-        <input type="submit" class="form-control" value="Save">
+
+
+
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" th:field="*{name}" class="form-control" placeholder="Enter name" required>
+        </div>
+
+
+
+        <div class="form-group">
+            <label>Age</label>
+            <input type="number" th:field="*{age}" class="form-control" placeholder="Enter age" min="0" required>
+        </div>
+
+
+
+
+        <div class="form-group">
+            <label>Height (cm)</label>
+            <input type="number" th:field="*{height}" class="form-control" placeholder="Enter height in cm" min="0" required>
+        </div>
+
+
+        <div class="form-group">
+            <label>Hair Colour</label>
+            <input type="text" th:field="*{hairColour}" class="form-control" placeholder="Enter hair colour">
+        </div>
+
+
+
+        <div class="form-group">
+            <label>Eye Colour</label>
+            <input type="text" th:field="*{eyeColour}" class="form-control" placeholder="Enter eye colour">
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block" style="background-color: #ff0084; border-color: #ff0084;">
+            Save Friend
+        </button>
+
     </form>
+
 </div>
 </body>
 </html>

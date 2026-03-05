@@ -29,9 +29,11 @@
     <tr>
       <th>Name</th>
       <th>Age</th>
+      <th>Birthday</th>
       <th>Height (cm)</th>
       <th>Hair Colour</th>
       <th>Eye Colour</th>
+      <th>Delete</th>
     </tr>
     </thead>
 
@@ -39,14 +41,22 @@
     <tr th:each="f : ${friends}">
       <td th:text="${f.name}"></td>
       <td th:text="${f.age}"></td>
+      <td th:text="${f.birth}"></td>
       <td th:text="${f.height}"></td>
       <td th:text="${f.hairColour}"></td>
       <td th:text="${f.eyeColour}"></td>
-    </tr>
 
+      <td>
+        <form th:action="@{/friend/deleteFriend/{id}(id=${f.id})}" method="post" >
+          <button type="submit" class="btn btn-danger btn-xs" style="background-color: #ff0084; border-color: #ff0084;">Delete</button>
+        </form>
+      </td>
+
+    </tr>
+    </tbody>
     <!-- If list is empty -->
     <tr th:if="${#lists.isEmpty(friends)}">
-      <td colspan="5" class="text-center text-muted">
+      <td colspan="6" class="text-center text-muted">
         No friends added yet.
       </td>
     </tr>

@@ -1,10 +1,9 @@
 package at.spengergasse.spring_thymeleaf.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import java.beans.ConstructorProperties;
 import java.time.LocalDate;
 
 @Entity
@@ -13,13 +12,48 @@ public class Friend {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Column
     private String name;
+
+    @Column
     private int age;
+
+    @Column
     private String hairColour;
+
+    @Column
     private String eyeColour;
+
+    @Column
     private double height;
 
+    @Column
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private LocalDate birth;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
 
     public String getHairColour() {
         return hairColour;
@@ -45,19 +79,13 @@ public class Friend {
         this.height = height;
     }
 
-    public String getName() {
-        return name;
+    public LocalDate getBirth() {
+        return birth;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setBirth(LocalDate birth) {
+        this.birth = birth;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 }
+

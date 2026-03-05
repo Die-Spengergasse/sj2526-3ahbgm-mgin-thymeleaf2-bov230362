@@ -2,12 +2,11 @@ package at.spengergasse.spring_thymeleaf.controllers;
 
 import at.spengergasse.spring_thymeleaf.entities.Friend;
 import at.spengergasse.spring_thymeleaf.entities.FriendRepository;
+import jakarta.persistence.Column;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
 @Controller
 @RequestMapping("/friend")
 public class FriendController {
@@ -30,10 +29,15 @@ public class FriendController {
     }
 
 
-
     @PostMapping("/add")
     public String addFriend(@ModelAttribute("friend") Friend friend) {
         friendRepository.save(friend);
+        return "redirect:/friend/list";
+    }
+
+    @PostMapping("/deleteFriend/{id}")
+    public String deleteFriend(@PathVariable int id) {
+        friendRepository.deleteById(id);
         return "redirect:/friend/list";
     }
 

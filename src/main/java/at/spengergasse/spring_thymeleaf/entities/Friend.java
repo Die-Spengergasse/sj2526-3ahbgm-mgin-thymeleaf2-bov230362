@@ -16,9 +16,6 @@ public class Friend {
     private String name;
 
     @Column
-    private int age;
-
-    @Column
     private String hairColour;
 
     @Column
@@ -47,13 +44,6 @@ public class Friend {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 
     public String getHairColour() {
         return hairColour;
